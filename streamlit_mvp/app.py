@@ -12,7 +12,7 @@ from demo_data import generate_demo_data
 from narrative import generate_narrative
 from utils import download_link, html_report, load_records, pdf_report_bytes, save_records
 
-st.set_page_config(page_title="Neurocognitive Mirror", layout="wide")
+st.set_page_config(page_title="Neurocognitive Mirror", page_icon="🧠", layout="wide")
 st.title("Neurocognitive Mirror MVP")
 st.caption("Privacy-first cognitive self-tracking with local JSON persistence.")
 
