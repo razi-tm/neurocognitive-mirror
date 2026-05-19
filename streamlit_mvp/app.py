@@ -50,8 +50,16 @@ with tab_dash:
         st.dataframe(outliers(df, "reaction_time_ms"), use_container_width=True)
 
 with tab_tests:
-    st.warning("After each browser test, copy the JSON result into the Self report form. Embedded components cannot directly mutate Streamlit state on Community Cloud without a custom component package.")
-    digit_span_component(); reaction_time_component(); stroop_component()
+    st.subheader('Cognitive tests')
+    st.caption('Run each quick task, then paste JSON outputs into Self report.')
+    st.info('Tip: complete tests in order for a smoother flow: Digit Span → Reaction Time → Stroop.')
+    c1, c2 = st.columns([1, 1])
+    with c1:
+        digit_span_component()
+        reaction_time_component()
+    with c2:
+        stroop_component()
+    st.warning('Current MVP limitation: test components cannot write directly to Streamlit session state here, so copy/paste JSON manually.')
 
 with tab_entry:
     st.subheader("Add session")
